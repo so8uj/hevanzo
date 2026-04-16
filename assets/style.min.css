@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* ROOT CSS */
+:root {
+  --color-a: #efefef;
+  --color-b: #181818;
+}
+
+/* Reusable CSS */
+.color-a {
+  color: var(--color-a);
+}
+.bg-a {
+  background: var(--color-a);
+}
+.color-b {
+  color: var(--color-b);
+}
+.bg-b {
+  background: var(--color-b);
+}
+.content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sec-padding {
+  padding: 54px 0;
+}
+
+/* Body CSS */
+
+body {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Header CSS */
+
+.main-nav li a {
+  font-size: 14px;
+  color: var(--color-b);
+}
+.header-right ul li a {
+  position: relative;
+}
+.header-right ul li a span {
+  position: absolute;
+  top: -3px;
+  right: -4px;
+  background: #fff;
+  color: var(--color-b);
+  font-size: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-b);
+  border-radius: 20px;
+}
+
+.banner {
+  background: url("../assets/img/main-banner.jpg") center / cover no-repeat;
+  height: calc(100vh - 110px);
+  width: 100%;
+  padding-bottom: 75px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.btn-sm {
+  padding: 8px 20px;
+}
+
+.btn-a {
+  background: var(--color-a);
+  color: var(--color-b);
+}
+.btn-a img {
+  background: var(--color-b);
+  padding: 8px;
+  border-radius: 50%;
+  width: 26px;
+}
+
+.btn-a:hover {
+  background: var(--color-b);
+  color: var(--color-a);
+}
+
+.btn-a:hover img {
+  background: var(--color-b);
+  filter: invert(1);
+}
+
+.btn-b {
+  background: var(--color-b);
+  color: var(--color-a);
+}
+.btn-b img {
+  background: var(--color-a);
+  padding: 8px;
+  border-radius: 50%;
+  width: 26px;
+}
+
+.btn-b:hover {
+  background: var(--color-a);
+  color: var(--color-b);
+}
+.btn-b img {
+  background: var(--color-b);
+  filter: invert(1);
+}
+.btn-b:hover img {
+  filter: unset !important;
+}
+
+.single-product {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(24, 24, 24, 0.1);
+  border-top: none;
+}
+.single-product-details {
+  padding: 16px 24px;
+}
+.single-product-details .color-variant li {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(24, 24, 24, 0);
+  cursor: pointer;
+}
+.single-product-details .color-variant li .color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  content: "";
+  border: 1px solid rgba(24, 24, 24, 0.15);
+}
+.single-product-details .color-variant li.active {
+  border: 1px solid rgba(24, 24, 24, 0.7);
+}
+.single-product-details .color-variant li.active .color {
+  width: 10px;
+  height: 10px;
+}
+.product-overly-detail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 36px;
+}
+
+.footer {
+  padding-top: 80px;
+  margin-top: 60px;
+}
+.social-icons li {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--color-b);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+.social-icons li img {
+  width: 20px;
+}
+
+.social-icons li:hover {
+  transform: translateY(-5px);
+  background: var(--color-a);
+  filter: invert(1);
+}

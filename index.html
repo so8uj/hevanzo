@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>HEVANZO</title>
+</head>
+
+<body>
+
+    <div class="header-top text-center bg-a italic text-sm py-2">Welcome To Our Store</div>
+    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 w-full z-[100] bg-white shadow-sm">
+        <div class="header-bottom py-6">
+            <div class="container">
+                <div class="main-header flex flex-wrap items-center justify-between relative relative">
+                    <div class="logo w-1/2 lg:w-1/4">
+                        <img src="./assets/img/hevanzo.svg" alt="HEVANZO">
+                    </div>
+                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[50px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
+                        :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
+                        <ul
+                            class="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-y-0 gap-x-[30px] main-nav justify-center">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">All Products</a></li>
+                            <li><a href="#">New Arrivals</a></li>
+                            <li><a href="#">Customer Service</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-right w-1/2 lg:w-1/4">
+                        <ul class="flex items-center gap-x-[16px] justify-end">
+                            <li class="language-switcher mr-3 hidden sm:block">
+                                <select name="language" id="language">
+                                    <option value="en">En</option>
+                                    <option value="bn">Bn</option>
+                                </select>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>0</span>
+                                    <img src="./assets/img/icons/heart.svg" alt="Heart Icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>0</span>
+                                    <img src="./assets/img/icons/shopping-cart.svg" alt="Shopping Cart Icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/img/icons/user.svg" alt="User Icon">
+                                </a>
+                            </li>
+                            <li class="lg:hidden ml-2">
+                                <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-1 menu-hamburger rounded">
+                                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6 color-b" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                    <svg x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6 color-b" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        style="display: none;">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="banner flex items-end">
+            <div class="container">
+                <div class="banner-content" data-aos="fade-right">
+                    <h1 class="font-bold text-[36px] md:text-[46px] color-a mb-0 leading-none">HEVANZO - Made Different
+                    </h1>
+                    <p class="text-[18px] md:text-[22px] italic color-a my-[15px] md:my-[30px]">The Oversize Collection.
+                    </p>
+                    <a href="#" class="btn-a btn">Shop Collection <img src="./assets/img/icons/arrow-right-top.svg"
+                            alt="Arrow Right Icon"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-category sec-padding">
+            <div class="container">
+                <div class="product-grid grid grid-cols-12 gap-[30px]">
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-3.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">Logo Hoodie + Open Leg Jogger</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center active">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-2.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">Zip Hoodie + Open Leg Jogger</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="active content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.90</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 lg:col-span-6 full-image" data-aos="fade-up">
+                        <div class="product-image relative">
+                            <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
+                            <div class="product-overly-detail color-a">
+                                <h2 class="text-[28px] font-bold">Oversize Sweats</h2>
+                                <p class="text-sm italic">Crafted for comfort and everyday wear.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-1.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">Logo Hoodie</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="active content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-5.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">ZLogo Zip Hoodie</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center active">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-4.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">Zip Hoodie + Open Leg Jogger</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="active content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-3.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">Logo Hoodie + Open Leg Jogger</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center active">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3" data-aos="fade-up">
+                        <div class="product-image">
+                            <img src="./assets/img/product-2.png" class="w-full" alt="Product Image">
+                        </div>
+                        <div class="single-product-details">
+                            <h3 class="product-title">Zip Hoodie + Open Leg Jogger</h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="active content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.90</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 lg:col-span-6 full-image" data-aos="fade-up">
+                        <div class="product-image relative">
+                            <img src="./assets/img/full-image-2.png" class="w-full" alt="Product Image">
+                            <div class="product-overly-detail color-a">
+                                <h2 class="text-[28px] font-bold">Oversize T-Shirts</h2>
+                                <p class="text-sm italic">Summer, Essential.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-padding border-t-1 border-b-1 border-[#18181850]">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-6">
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                        <div class="icon-box text-center" data-aos="zoom-in">
+                            <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
+                                <img src="./assets/img/free-shipping.png" width="24px" alt="Icon">
+                            </div>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Fast & Free Shipping</h5>
+                            <p class="italic mb-0 text-sm">Fast & Free Shipping On 1+ Items</p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                        <div class="icon-box text-center" data-aos="zoom-in">
+                            <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
+                                <img src="./assets/img/free-shipping.png" width="24px" alt="Icon">
+                            </div>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Hassle Free Returns</h5>
+                            <p class="italic mb-0 text-sm">14 Days Easy Returns.</p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                        <div class="icon-box text-center" data-aos="zoom-in">
+                            <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
+                                <img src="./assets/img/free-shipping.png" width="24px" alt="Icon">
+                            </div>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Secure Checkout</h5>
+                            <p class="italic mb-0 text-sm">All Payments Are Processed Securely</p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                        <div class="icon-box text-center" data-aos="zoom-in">
+                            <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
+                                <img src="./assets/img/free-shipping.png" width=" 24px" alt="Icon">
+                            </div>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Customer Service</h5>
+                            <p class="italic text-sm mb-0">Our Support Is Available 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer bg-a">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-y-10">
+                    <div class="col-span-12 lg:col-span-4">
+                        <div class="footer-box" data-aos="fade-right">
+                            <h3 class="font-bold text-2xl">Join Our Vip Club & Get 15% Off</h3>
+                            <div class="subscriber-box py-8 lg:py-[56px]">
+                                <form action="#"
+                                    class="bg-white mr-5 flex justify-between rounded-full p-[5px] ps-4 border-1 border-[#181818]">
+                                    <input type="text" placeholder="Enter Your Email" class="border-none outline-0 p-0">
+                                    <button class="hidden-sm btn-b btn btn-sm">Subscribe <img
+                                            src="./assets/img/icons/arrow-right-top.svg"
+                                            alt="Arrow Right Icon"></button>
+                                </form>
+                                <button class="hidden-lg btn-b btn btn-sm mt-2">Subscribe<img
+                                        src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></button>
+                            </div>
+                            <ul class="flex gap-x-4 social-icons">
+                                <li class="content-center"><a href="#"><img src="./assets/img/icons/facebook.svg"
+                                            alt="Facebook"></a></li>
+                                <li class="content-center"><a href="#"><img src="./assets/img/icons/linkedin.svg"
+                                            alt="Linkedin"></a></li>
+                                <li class="content-center"><a href="#"><img src="./assets/img/icons/x.svg" alt="X"></a>
+                                </li>
+                                <li class="content-center"><a href="#"><img src="./assets/img/icons/instagram.svg"
+                                            alt="Instagram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block col-span-2"></div>
+                    <div class="col-span-12 lg:col-span-6" data-aos="fade-left">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 mb-10">
+                            <div class="col-span-1">
+                                <h4 class="font-bold text-xl">Company</h4>
+                                <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">All Products</a></li>
+                                    <li><a href="#">New Arrival</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-span-1">
+                                <h4 class="font-bold text-xl">Others</h4>
+                                <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="#">Shipping Guidelines</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <img src="./assets/img/payment-methods.png" width="100%" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom border-t-1 border-[#18181850] mt-[40px] lg:mt-[80px] py-[30px] lg:py-[50px]">
+                <div
+                    class="container flex flex-col md:flex-row items-center justify-between gap-y-4 text-center md:text-left text-sm">
+                    <p>&copy; 2026 HEVANZO. All rights reserved.</p>
+                    <p>Developed by <a href="#">Arham Techpro</a></p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 50,
+        });
+    </script>
+</body>
+
+</html>
