@@ -4,6 +4,10 @@
 :root {
   --color-a: #efefef;
   --color-b: #181818;
+  --border-white-25: rgba(255, 255, 255, 0.25);
+  --border-1: rgba(24, 24, 24, 0.1);
+  --border-2: rgba(24, 24, 24, 0.2);
+  --bg-glass: rgba(217, 217, 217, 0.45);
 }
 
 /* Reusable CSS */
@@ -39,6 +43,20 @@
 }
 .bg-b {
   background: var(--color-b);
+}
+
+.bg-glass{
+  background: var(--bg-glass);
+}
+
+.border-1 {
+  border: 1px solid var(--border-1);
+}
+.border-white-25 {
+  border: 1px solid var(--border-white-25);
+}
+.border-2 {
+  border: 1px solid var(--border-2);
 }
 .content-center {
   display: flex;
@@ -223,4 +241,13 @@ body {
   transform: translateY(-5px);
   background: var(--color-a);
   filter: invert(1);
+}
+
+.social-icons .youtube-icon{
+  border-radius: 12px;
+  width: 65px;
+}
+
+.social-icons .youtube-icon:hover{
+  filter: unset; 
 }
