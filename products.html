@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css?v=1.0">
     <title>HEVANZO | Products Page</title>
 </head>
@@ -19,7 +18,9 @@
             <div class="container">
                 <div class="main-header flex flex-wrap items-center justify-between relative relative">
                     <div class="logo w-1/2 lg:w-1/4">
-                        <img src="./assets/img/hevanzo.svg" alt="HEVANZO">
+                        <a href="index.html">
+                            <img src="./assets/img/hevanzo.svg" alt="HEVANZO">
+                        </a>
                     </div>
                     <nav class="nav w-full lg:w-2/4 absolute lg:static top-[50px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
                         :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
@@ -87,12 +88,12 @@
 
                 <div class="product-grid grid grid-cols-12 gap-[30px] mb-[30px]">
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-3.png" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Logo Hoodie + Open Leg Jogger</h3>
+                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie + Open Leg Jogger</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center active">
                                     <div class="color" style="background: #000;"></div>
@@ -105,12 +106,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-2.png" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Zip Hoodie + Open Leg Jogger</h3>
+                            <h3 class="product-title"><a href="single-product.html">Zip Hoodie + Open Leg Jogger</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -123,7 +124,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 lg:col-span-6 full-image" data-aos="fade-up">
+                    <div class="single-product col-span-12 lg:col-span-6 full-image">
                         <div class="product-image relative">
                             <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
@@ -133,12 +134,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-1.png" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Logo Hoodie</h3>
+                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -151,12 +152,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-5.png" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Logo Zip Hoodie</h3>
+                            <h3 class="product-title"><a href="single-product.html">Logo Zip Hoodie</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center active">
                                     <div class="color" style="background: #000;"></div>
@@ -169,12 +170,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-4.png" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Open Leg Jogger</h3>
+                            <h3 class="product-title"><a href="single-product.html">Open Leg Jogger</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="active content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -187,23 +188,24 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 lg:col-span-12 full-image-section" data-aos="fade-up">
+                    <div class="single-product col-span-12 lg:col-span-12 full-image-section">
                         <div class="product-image relative">
                             <img src="./assets/img/product-showcase.jpg" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
                                 <h2 class="text-[28px] font-bold mb-0 leading-none">Oversize T-Shirt & Shorts </h2>
                                 <p class="text-sm italic my-3">Relaxed fit, everyday comfort. </p>
-                                <a href="#" class="btn-a btn">Shop Now <img src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
+                                <a href="#" class="btn-a btn">Shop Now <img src="./assets/img/icons/arrow-right-top.svg"
+                                        alt="Arrow Right Icon"></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-6.jpg" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Sweat Shorts</h3>
+                            <h3 class="product-title"><a href="single-product.html">Sweat Shorts</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -216,12 +218,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-7.jpg" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Oversize T-Shirt</h3>
+                            <h3 class="product-title"><a href="single-product.html">Oversize T-Shirt</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center ">
                                     <div class="color" style="background: #000;"></div>
@@ -234,12 +236,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4" data-aos="fade-up">
-                        <div class="product-image">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-8.jpg" class="w-full" alt="Product Image">
-                        </div>
+                        </a>
                         <div class="single-product-details">
-                            <h3 class="product-title">Regular T-Shirt</h3>
+                            <h3 class="product-title"><a href="single-product.html">Regular T-Shirt</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class=" content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -251,7 +253,7 @@
                             <p class="product-price"> <del>€18.95</del> €13.95</p>
                         </div>
                     </div>
-                    
+
 
                 </div>
 
@@ -263,7 +265,7 @@
             <div class="container">
                 <div class="grid grid-cols-12 gap-6">
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/shipping-global.svg" width="24px" alt="Icon">
                             </div>
@@ -272,7 +274,7 @@
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/arrow-return.svg" width="24px" alt="Icon">
                             </div>
@@ -281,7 +283,7 @@
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/lock.svg" width="24px" alt="Icon">
                             </div>
@@ -290,7 +292,7 @@
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/support.svg" width=" 24px" alt="Icon">
                             </div>
@@ -306,7 +308,7 @@
             <div class="container">
                 <div class="grid grid-cols-12 gap-y-10">
                     <div class="col-span-12 lg:col-span-4">
-                        <div class="footer-box" data-aos="fade-right">
+                        <div class="footer-box">
                             <h3 class="font-bold text-2xl">Join Our Vip Club & Get 15% Off</h3>
                             <div class="subscriber-box py-8 lg:py-[56px]">
                                 <form action="#"
@@ -326,15 +328,18 @@
                                             alt="Linkedin"></a></li>
                                 <li class="content-center"><a href="#"><img src="./assets/img/icons/x.svg" alt="X"></a>
                                 </li>
-                                <li class="content-center"><a href="#"><img src="./assets/img/icons/instagram.svg" alt="Instagram"></a></li>
+                                <li class="content-center"><a href="#"><img src="./assets/img/icons/instagram.svg"
+                                            alt="Instagram"></a></li>
 
-                                <li class="content-center"><a href="#"><img src="./assets/img/icons/tiktok.svg" alt="Tiktok"></a></li>
-                                <li class="content-center youtube-icon"><a href="#"><img src="./assets/img/icons/youtube.svg" alt="Youtube"></a></li>
+                                <li class="content-center"><a href="#"><img src="./assets/img/icons/tiktok.svg"
+                                            alt="Tiktok"></a></li>
+                                <li class="content-center youtube-icon"><a href="#"><img
+                                            src="./assets/img/icons/youtube.svg" alt="Youtube"></a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="hidden lg:block col-span-2"></div>
-                    <div class="col-span-12 lg:col-span-6" data-aos="fade-left">
+                    <div class="col-span-12 lg:col-span-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 mb-10">
                             <div class="col-span-1">
                                 <h4 class="font-bold text-xl">Company</h4>
@@ -369,14 +374,6 @@
         </footer>
     </main>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            duration: 800,
-            offset: 50,
-        });
-    </script>
 </body>
 
 </html>

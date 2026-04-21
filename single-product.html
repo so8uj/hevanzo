@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css?v=1.0">
     <title>HEVANZO | Single Product Page</title>
 </head>
@@ -19,7 +18,9 @@
             <div class="container">
                 <div class="main-header flex flex-wrap items-center justify-between relative relative">
                     <div class="logo w-1/2 lg:w-1/4">
-                        <img src="./assets/img/hevanzo.svg" alt="HEVANZO">
+                        <a href="index.html">
+                            <img src="./assets/img/hevanzo.svg" alt="HEVANZO">
+                        </a>
                     </div>
                     <nav class="nav w-full lg:w-2/4 absolute lg:static top-[50px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
                         :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
@@ -86,8 +87,8 @@
             <div class="container">
 
                 <div class="grid grid-cols-12">
-                    <div class="col-span-5">
-                        <div class="left-product-image-container grid grid-cols-12 gap-5">
+                    <div class="col-span-12 lg:col-span-6">
+                        <div class="left-product-image-container grid grid-cols-12 gap-5 pe-0 lg:pe-9">
                             <div class="main-image col-span-12">
                                 <img src="./assets/img/single-main-image.jpg" alt="">
                             </div>
@@ -95,27 +96,116 @@
                                 <img src="./assets/img/youtube-thumb.jpg" alt="">
                             </div>
 
-                            <div class="bulk-image col-span-6">
+                            <div class="bulk-image col-span-12 md:col-span-6">
                                 <img src="./assets/img/bulk-image.jpg" alt="">
                             </div>
-                            <div class="bulk-image col-span-6">
+                            <div class="bulk-image col-span-12 md:col-span-6">
                                 <img src="./assets/img/bulk-image.jpg" alt="">
                             </div>
-                            <div class="bulk-image col-span-6">
+                            <div class="bulk-image col-span-12 md:col-span-6">
                                 <img src="./assets/img/bulk-image.jpg" alt="">
                             </div>
-                            <div class="bulk-image col-span-6">
+                            <div class="bulk-image col-span-12 md:col-span-6">
                                 <img src="./assets/img/bulk-image.jpg" alt="">
                             </div>
 
 
                         </div>
                     </div>
-                    <div class="col-span-7 ps-10">
-                        <div class="product-right-details">
+                    <div class="col-span-12 lg:col-span-6 mt-5 lg:mt-0">
+                        <div class="product-right-details ps-0 lg:ps-10">
                             <h1 class="text-2xl leading-sm font-semibold">Logo Hoodie</h1>
                             <p class="my-1"><del>€49.95</del> €44.95</p>
                             <p class="mb-0 italic">Including VAT - Plus Shipping Costs</p>
+
+                            <div class="color-and-size-chart-container mt-7" x-data="sobujFrontend">
+                                <div class="color-container">
+                                    <h5 class="selected-color font-semibold">Colour: <span
+                                            x-text="selectedColor">Heather Grey</span>
+                                    </h5>
+                                    <ul class="flex gap-x-7 mt-5 color-samples">
+                                        <li @click="selectedColor = 'Black'"
+                                            :class="{ 'selected': selectedColor === 'Black' }"><img
+                                                src="./assets/img/sample-black.jpg" alt="Sample Black"></li>
+                                        <li @click="selectedColor = 'Heather Grey'"
+                                            :class="{ 'selected': selectedColor === 'Heather Grey' }"><img
+                                                src="./assets/img/sample-gray.jpg" alt="Sample Gray">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="size-container mt-9">
+                                    <div class="flex justify-between">
+                                        <h5 class="selected-color font-normal">Size: <span
+                                                x-text="selectedSize">M</span>
+                                        </h5>
+                                        <a href="#" class="underline">Size Chart</a>
+                                    </div>
+                                    <ul class="flex gap-x-7 mt-5 color-samples">
+                                        <li @click="selectedSize = 'XXS'"
+                                            :class="{ 'selected': selectedSize === 'XXS' }"
+                                            class="content-center text-sm">XXS</li>
+                                        <li @click="selectedSize = 'XS'" :class="{ 'selected': selectedSize === 'XS' }"
+                                            class="content-center text-sm">XS</li>
+                                        <li @click="selectedSize = 'S'" :class="{ 'selected': selectedSize === 'S' }"
+                                            class="content-center text-sm">S</li>
+                                        <li @click="selectedSize = 'M'" :class="{ 'selected': selectedSize === 'M' }"
+                                            class="content-center text-sm">M</li>
+                                        <li @click="selectedSize = 'L'" :class="{ 'selected': selectedSize === 'L' }"
+                                            class="content-center text-sm">L</li>
+                                        <li @click="selectedSize = 'XL'" :class="{ 'selected': selectedSize === 'XL' }"
+                                            class="content-center text-sm">XL</li>
+                                    </ul>
+                                </div>
+                                <div class="quantity-btn-container mt-5 mb-8">
+                                    <div class="quantity-container">
+                                        <button @click="decrementQty()" class="quantity-btn"><img
+                                                src="./assets/img/icons/minus-icon.svg" alt="Minus Icon"></button>
+                                        <span class="quantity font-semibold text-sm" x-text="quantity">1</span>
+                                        <button @click="incrementQty()" class="quantity-btn"><img
+                                                src="./assets/img/icons/plus-icon.svg" alt="Plus Icon"></button>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart-and-buy-now-container">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <p class="mb-0 text-sm italic">Delivery Time: 5 Working Days</p>
+                                        <p class="mb-0 text-sm italic">HEVANZO - Made Different</p>
+                                    </div>
+                                    <div class="buttons-containers flex justify-between items-center p-[7px]">
+                                        <button class="btn-b btn btn-sm">Add to Cart <img
+                                                src="./assets/img/icons/arrow-right-top.svg"
+                                                alt="Arrow Right Icon"></button>
+                                        <button class="btn-b btn btn-sm">Buy Now <img
+                                                src="./assets/img/icons/arrow-right-top.svg"
+                                                alt="Arrow Right Icon"></button>
+                                    </div>
+                                </div>
+
+                                <div class="description-container mt-13">
+                                    <ul>
+                                        <li class="flex items-center justify-between text-sm font-normal">
+                                            <p>Description & Fit</p><img src="./assets/img/icons/arrow-right.svg"
+                                                width="16px" alt="Arrow Right Icon">
+                                        </li>
+                                        <li class="flex items-center justify-between text-sm font-normal">
+                                            <p>Material</p><img src="./assets/img/icons/arrow-right.svg" width="16px"
+                                                alt="Arrow Right Icon">
+                                        </li>
+                                        <li class="flex items-center justify-between text-sm font-normal">
+                                            <p>Care Guide</p><img src="./assets/img/icons/arrow-right.svg" width="16px"
+                                                alt="Arrow Right Icon">
+                                        </li>
+                                        <li class="flex items-center justify-between text-sm font-normal">
+                                            <p>Delivery & Payments</p><img src="./assets/img/icons/arrow-right.svg"
+                                                width="16px" alt="Arrow Right Icon">
+                                        </li>
+                                        <li class="flex items-center justify-between text-sm font-normal">
+                                            <p>Free Returns</p><img src="./assets/img/icons/arrow-right.svg"
+                                                width="16px" alt="Arrow Right Icon">
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
 
                         </div>
                     </div>
@@ -125,11 +215,132 @@
             </div>
         </section>
 
+        <section class="related-products">
+            <div class="container">
+                <h2 class="text-5xl font-semibold mb-12">You May Also Like</h2>
+
+                <div class="product-grid grid grid-cols-12 gap-[30px] mb-[30px]">
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/product-3.png" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie + Open Leg Jogger</a>
+                            </h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center active">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/product-2.png" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Zip Hoodie + Open Leg Jogger</a>
+                            </h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="active content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€95.90</del> €85.90</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/product-4.png" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Open Leg Jogger</a></h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="active content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€39.95</del> €35.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/product-5.png" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Logo Zip Hoodie</a></h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center active">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€54.95</del> €49.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/product-7.jpg" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Oversize T-Shirt</a></h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center ">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center active">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€18.95</del> €13.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/product-6.jpg" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Sweat Shorts</a></h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="active content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€29.95</del> €25.95</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
         <section class="sec-padding border-t-1 border-b-1 border-[#18181850]">
             <div class="container">
                 <div class="grid grid-cols-12 gap-6">
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/shipping-global.svg" width="24px" alt="Icon">
                             </div>
@@ -138,7 +349,7 @@
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/arrow-return.svg" width="24px" alt="Icon">
                             </div>
@@ -147,7 +358,7 @@
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/lock.svg" width="24px" alt="Icon">
                             </div>
@@ -156,7 +367,7 @@
                         </div>
                     </div>
                     <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-                        <div class="icon-box text-center" data-aos="zoom-in">
+                        <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/support.svg" width=" 24px" alt="Icon">
                             </div>
@@ -172,7 +383,7 @@
             <div class="container">
                 <div class="grid grid-cols-12 gap-y-10">
                     <div class="col-span-12 lg:col-span-4">
-                        <div class="footer-box" data-aos="fade-right">
+                        <div class="footer-box">
                             <h3 class="font-bold text-2xl">Join Our Vip Club & Get 15% Off</h3>
                             <div class="subscriber-box py-8 lg:py-[56px]">
                                 <form action="#"
@@ -203,7 +414,7 @@
                         </div>
                     </div>
                     <div class="hidden lg:block col-span-2"></div>
-                    <div class="col-span-12 lg:col-span-6" data-aos="fade-left">
+                    <div class="col-span-12 lg:col-span-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 mb-10">
                             <div class="col-span-1">
                                 <h4 class="font-bold text-xl">Company</h4>
@@ -238,13 +449,25 @@
         </footer>
     </main>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true,
-            duration: 800,
-            offset: 50,
-        });
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('sobujFrontend', () => ({
+                // Product Selection State
+                selectedColor: 'Heather Grey',
+                selectedSize: 'M',
+                quantity: 1,
+
+                // Selection Methods
+                incrementQty() {
+                    this.quantity++;
+                },
+                decrementQty() {
+                    if (this.quantity > 1) {
+                        this.quantity--;
+                    }
+                }
+            }))
+        })
     </script>
 </body>
 
