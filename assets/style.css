@@ -137,8 +137,8 @@ body {
 
 @media (max-width: 768px) {
   .banner {
-    padding-bottom: 130px;
-    height: 100svh;
+    /* padding-bottom: 130px; */
+    height: calc(100svh - 118px);
   }
 }
 
@@ -348,4 +348,17 @@ body {
 .product-right-details {
   position: sticky;
   top: 164px;
+}
+
+@media (max-width: 768px) {
+  .btn-sm {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+  .btn {
+    gap: 5px;
+  }
+  .btn img {
+    width: 24px;
+  }
 }
