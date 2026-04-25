@@ -12,17 +12,44 @@
 
 <body>
 
-    <div class="header-top text-center bg-a italic text-sm py-2">Welcome To Our Store</div>
+    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm">Welcome To Our Store</div>
     <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 w-full z-[100] bg-white shadow-sm">
-        <div class="header-bottom py-6">
+        <div class="header-bottom py-2 lg:py-6">
             <div class="container">
                 <div class="main-header flex flex-wrap items-center justify-between relative relative">
-                    <div class="logo w-1/2 lg:w-1/4">
-                        <a href="index.html">
-                            <img src="./assets/img/hevanzo-logo.svg" alt="HEVANZO">
+
+
+                    <div class="header-left-mobile w-1/4 lg:w-1/4 block lg:hidden">
+                        <ul class="flex items-center gap-x-[16px] justify-start">
+                            <li @click="mobileMenuOpen = !mobileMenuOpen" class="cursor-pointer" style="width: 18px;">
+                                <img x-show="!mobileMenuOpen" src="assets/img/icons/menu.svg" width="100%"
+                                    alt="Menu Hamburger">
+                                <img x-show="mobileMenuOpen" src="assets/img/icons/close.svg" width="100%"
+                                    alt="Menu Close">
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <span>0</span>
+                                    <img src="./assets/img/icons/heart.svg" alt="Heart Icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./assets/img/icons/search.svg" width="18px" alt="User Icon">
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="logo w-2/4 lg:w-1/4 lg:text-left content-center">
+                        <a href="index.html" class="inline-block">
+                            <img src="./assets/img/hevanzo-logo.svg" class="w-[110px] lg:w-[150px]" alt="HEVANZO">
                         </a>
                     </div>
-                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[50px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
+
+                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[33px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
                         :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
                         <ul
                             class="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-y-0 gap-x-[30px] main-nav justify-center">
@@ -32,15 +59,16 @@
                             <li><a href="#">Customer Service</a></li>
                         </ul>
                     </nav>
-                    <div class="header-right w-1/2 lg:w-1/4">
+
+                    <div class="header-right w-1/4 lg:w-1/4">
                         <ul class="flex items-center gap-x-[16px] justify-end">
-                            <li class="language-switcher mr-3 hidden sm:block">
+                            <li class="language-switcher lg:mr-3">
                                 <select name="language" id="language">
                                     <option value="en">En</option>
                                     <option value="bn">Bn</option>
                                 </select>
                             </li>
-                            <li>
+                            <li class="hidden lg:inline-block">
                                 <a href="#">
                                     <span>0</span>
                                     <img src="./assets/img/icons/heart.svg" alt="Heart Icon">
@@ -57,23 +85,13 @@
                                     <img src="./assets/img/icons/user.svg" alt="User Icon">
                                 </a>
                             </li>
-                            <li class="lg:hidden ml-2">
-                                <button @click="mobileMenuOpen = !mobileMenuOpen" class="p-1 menu-hamburger rounded">
-                                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg"
-                                        class="h-6 w-6 color-b" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                    <svg x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg"
-                                        class="h-6 w-6 color-b" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        style="display: none;">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </li>
+
                         </ul>
                     </div>
+
+
+
+
                 </div>
 
 
@@ -86,14 +104,14 @@
         <section class="product-category sec-padding">
             <div class="container">
 
-                <div class="product-grid grid grid-cols-12 gap-[30px] mb-[30px]">
+                <div class="product-grid grid grid-cols-12 gap-[16px] lg:gap-[30px] mb-[30px]">
 
                     <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-3.png" class="w-full" alt="Product Image">
+                            <img src="./assets/img/1.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
-                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie + Open Leg Jogger</a>
+                            <h3 class="product-title"><a href="single-product.html">Open Leg Jogger</a>
                             </h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center active">
@@ -103,16 +121,16 @@
                                     <div class="color" style="background: #fff;"></div>
                                 </li>
                             </ul>
-                            <p class="product-price"> <del>€90.95</del> €80.95</p>
+                            <p class="product-price"> <del>€39.95</del> €35.95</p>
                         </div>
                     </div>
 
                     <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-2.png" class="w-full" alt="Product Image">
+                            <img src="./assets/img/2.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
-                            <h3 class="product-title"><a href="single-product.html">Zip Hoodie + Open Leg Jogger</a>
+                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie</a>
                             </h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center">
@@ -122,7 +140,7 @@
                                     <div class="color" style="background: #fff;"></div>
                                 </li>
                             </ul>
-                            <p class="product-price"> <del>€95.90</del> €85.90</p>
+                            <p class="product-price"> <del>€49.95</del> €44.95</p>
                         </div>
                     </div>
 
@@ -136,12 +154,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-1.png" class="w-full" alt="Product Image">
+                            <img src="./assets/img/3.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
-                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie</a></h3>
+                            <h3 class="product-title"><a href="single-product.html">Blank Hoodie</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -154,12 +172,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-5.png" class="w-full" alt="Product Image">
+                            <img src="./assets/img/4.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
-                            <h3 class="product-title"><a href="single-product.html">Logo Zip Hoodie</a></h3>
+                            <h3 class="product-title"><a href="single-product.html">Blank Zip Hoodie</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="content-center active">
                                     <div class="color" style="background: #000;"></div>
@@ -172,12 +190,12 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-4.png" class="w-full" alt="Product Image">
+                            <img src="./assets/img/5.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
-                            <h3 class="product-title"><a href="single-product.html">Open Leg Jogger</a></h3>
+                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie</a></h3>
                             <ul class="color-variant flex gap-x-2 py-2">
                                 <li class="active content-center">
                                     <div class="color" style="background: #000;"></div>
@@ -186,7 +204,25 @@
                                     <div class="color" style="background: #fff;"></div>
                                 </li>
                             </ul>
-                            <p class="product-price"> <del>€39.95</del> €35.95</p>
+                            <p class="product-price"> <del>€49.95</del> €44.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/6.jpg" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Hevanzo - Cap</a></h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="active content-center">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€19.95</del> €14.95</p>
                         </div>
                     </div>
 
@@ -194,15 +230,16 @@
                         <div class="product-image relative">
                             <img src="./assets/img/product-showcase.jpg" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
-                                <h2 class="text-[28px] font-bold mb-0 leading-none">Oversize T-Shirt & Shorts </h2>
+                                <h2 class="text-xl md:text-[28px] font-bold mb-0 leading-none">Oversize T-Shirt & Shorts
+                                </h2>
                                 <p class="text-sm italic my-3">Relaxed fit, everyday comfort. </p>
-                                <a href="#" class="btn-a btn">Shop Now <img src="./assets/img/icons/arrow-right-top.svg"
-                                        alt="Arrow Right Icon"></a>
+                                <a href="./products.html" class="btn-a btn btn-sm md:btn-md">Shop Now <img
+                                        src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-6.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -220,9 +257,9 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-7.jpg" class="w-full" alt="Product Image">
+                            <img src="./assets/img/7.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
                             <h3 class="product-title"><a href="single-product.html">Oversize T-Shirt</a></h3>
@@ -238,9 +275,27 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-4">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
-                            <img src="./assets/img/product-8.jpg" class="w-full" alt="Product Image">
+                            <img src="./assets/img/product-7.jpg" class="w-full" alt="Product Image">
+                        </a>
+                        <div class="single-product-details">
+                            <h3 class="product-title"><a href="single-product.html">Hevanzo - T-Shirt</a></h3>
+                            <ul class="color-variant flex gap-x-2 py-2">
+                                <li class="content-center ">
+                                    <div class="color" style="background: #000;"></div>
+                                </li>
+                                <li class="content-center active">
+                                    <div class="color" style="background: #fff;"></div>
+                                </li>
+                            </ul>
+                            <p class="product-price"> <del>€18.95</del> €13.95</p>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                        <a href="single-product.html" class="product-image block">
+                            <img src="./assets/img/8.jpg" class="w-full" alt="Product Image">
                         </a>
                         <div class="single-product-details">
                             <h3 class="product-title"><a href="single-product.html">Regular T-Shirt</a></h3>
@@ -266,40 +321,44 @@
         <section class="sec-padding border-t-1 border-b-1 border-[#18181850]">
             <div class="container">
                 <div class="grid grid-cols-12 gap-6">
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                         <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/shipping-global.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Fast & Free Shipping</h5>
-                            <p class="italic mb-0 text-sm">Fast & Free Shipping On 1+ Items</p>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Fast & Free Shipping
+                            </h5>
+                            <p class="italic mb-0 text-xs lg:text-sm">Fast & Free Shipping On 1+ Items</p>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                         <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/arrow-return.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Hassle Free Returns</h5>
-                            <p class="italic mb-0 text-sm">14 Days Easy Returns.</p>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Hassle Free Returns
+                            </h5>
+                            <p class="italic mb-0 text-xs lg:text-sm">14 Days Easy Returns.</p>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                         <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/lock.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Secure Checkout</h5>
-                            <p class="italic mb-0 text-sm">All Payments Are Processed Securely</p>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Secure Checkout
+                            </h5>
+                            <p class="italic mb-0 text-xs lg:text-sm">All Payments Are Processed Securely</p>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
                         <div class="icon-box text-center">
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/support.svg" width=" 24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-md">Customer Service</h5>
-                            <p class="italic text-sm mb-0">Our Support Is Available 24/7</p>
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Customer Service
+                            </h5>
+                            <p class="italic text-xs lg:text-sm">Our Support Is Available 24/7</p>
                         </div>
                     </div>
                 </div>
@@ -310,20 +369,18 @@
             <div class="container">
                 <div class="grid grid-cols-12 gap-y-10">
                     <div class="col-span-12 lg:col-span-4">
-                        <div class="footer-box">
+                        <div class="footer-box text-center lg:text-left">
                             <h3 class="font-bold text-2xl">Join Our Vip Club & Get 15% Off</h3>
                             <div class="subscriber-box py-8 lg:py-[56px]">
                                 <form action="#"
-                                    class="bg-white mr-5 flex justify-between rounded-full p-[5px] ps-4 border-1 border-[#181818]">
+                                    class="bg-white mr-0 lg:mr-5 flex justify-between rounded-full p-[5px] ps-4 border-1 border-[#181818]">
                                     <input type="text" placeholder="Enter Your Email" class="border-none outline-0 p-0">
-                                    <button class="hidden-sm btn-b btn btn-sm">Subscribe <img
+                                    <button class="btn-b btn btn-sm">Subscribe <img
                                             src="./assets/img/icons/arrow-right-top.svg"
                                             alt="Arrow Right Icon"></button>
                                 </form>
-                                <button class="hidden-lg btn-b btn btn-sm mt-2">Subscribe<img
-                                        src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></button>
                             </div>
-                            <ul class="flex gap-x-4 social-icons">
+                            <ul class="flex gap-x-4 social-icons justify-center lg:justify-start">
                                 <li class="content-center"><a href="#"><img src="./assets/img/icons/facebook.svg"
                                             alt="Facebook"></a></li>
                                 <li class="content-center"><a href="#"><img src="./assets/img/icons/linkedin.svg"
@@ -342,8 +399,8 @@
                     </div>
                     <div class="hidden lg:block col-span-2"></div>
                     <div class="col-span-12 lg:col-span-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 mb-10">
-                            <div class="col-span-1">
+                        <div class="grid grid-cols-2 gap-y-6 mb-10">
+                            <div class="col-span-1 ps-4 lg:ps-0">
                                 <h4 class="font-bold text-xl">Company</h4>
                                 <ul class="py-4 flex flex-col gap-y-4 text-sm">
                                     <li><a href="#">Home</a></li>
@@ -352,14 +409,16 @@
                                     <li><a href="#">Customer Service</a></li>
                                 </ul>
                             </div>
-                            <div class="col-span-1">
-                                <h4 class="font-bold text-xl">Others</h4>
-                                <ul class="py-4 flex flex-col gap-y-4 text-sm">
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Shipping Guidelines</a></li>
-                                    <li><a href="#">Return Policy</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
+                            <div class="col-span-1 flex justify-end lg:justify-start ">
+                                <div class="pe-4 lg:pe-0">
+                                    <h4 class="font-bold text-xl">Others</h4>
+                                    <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                        <li><a href="#">Terms & Conditions</a></li>
+                                        <li><a href="#">Shipping Guidelines</a></li>
+                                        <li><a href="#">Return Policy</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <img src="./assets/img/payment-methods.png" width="100%" alt="">
