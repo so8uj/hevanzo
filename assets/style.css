@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+@theme {
+  --breakpoint-xxl: 1600px;
+}
+
 /* ROOT CSS */
 :root {
   --color-a: #efefef;
@@ -27,10 +31,44 @@
   padding-left: 1.25rem;
 }
 
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
+    max-width: 1024px;
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1700px;
+  }
+  .sec-padding {
+    padding: 100px 0;
   }
 }
 @media (min-width: 768px) {
@@ -78,12 +116,6 @@
   align-items: center;
   justify-content: center;
 }
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
-}
 
 .sec-padding {
   padding: 54px 0;
@@ -109,6 +141,11 @@ body {
   font-size: 14px;
   color: var(--color-b);
 }
+@media (min-width: 1920px) {
+  .main-nav li a {
+    font-size: 18px;
+  }
+}
 .header-right ul li a,
 .header-left-mobile ul li a {
   position: relative;
@@ -116,13 +153,13 @@ body {
 .header-right ul li a span,
 .header-left-mobile ul li a span {
   position: absolute;
-  top: -3px;
-  right: -4px;
+  top: -4px;
+  right: -10px;
   background: #fff;
   color: var(--color-b);
-  font-size: 8px;
-  width: 12px;
-  height: 12px;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -138,6 +175,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 1920px) {
+  .banner {
+    padding-bottom: 120px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -158,6 +201,28 @@ body {
 }
 .btn-sm {
   padding: 8px 20px;
+}
+.btn-md {
+  padding: 12px 25px;
+}
+@media (min-width: 1600px) {
+  .btn {
+    padding: 16px 36px;
+    font-size: 18px;
+  }
+  .btn-md {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+  .btn-sm {
+    padding: 10px 24px;
+    font-size: 15px;
+  }
+  .btn img,
+  .btn-md img,
+  .btn-sm img {
+    width: 28px !important;
+  }
 }
 
 .btn-a {
@@ -214,6 +279,13 @@ body {
   height: 360px;
   object-fit: cover;
 }
+
+@media (min-width: 1920px) {
+  .single-product.lg\:col-span-3 img {
+    height: 500px;
+  }
+}
+
 .single-product-details {
   padding: 16px 24px;
 }
@@ -255,6 +327,12 @@ body {
 .footer {
   padding-top: 80px;
   margin-top: 60px;
+}
+@media (min-width: 1920px) {
+  .subscriber-box form {
+    padding: 10px;
+    padding-left: 25px;
+  }
 }
 .social-icons li {
   height: 40px;
@@ -344,6 +422,23 @@ body {
 .quantity-btn:hover img {
   filter: invert(1);
 }
+@media (min-width: 1600px) {
+  .quantity-container {
+    width: 180px;
+    height: 52px;
+    padding: 12px 20px;
+  }
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .quantity-container .quantity {
+    font-size: 20px;
+  }
+  .quantity-btn img {
+    width: 14px;
+  }
+}
 .buttons-containers {
   border: 1px solid rgba(24, 24, 24, 0.45);
   border-radius: 50px;
@@ -360,10 +455,16 @@ body {
   top: 164px;
 }
 
+@media (min-width: 1600px) {
+  .left-product-image-container {
+    padding-right: 105px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .btn-sm {
     padding: 6px 15px;
-    font-size: 12px;
+    font-size: 14px;
   }
   .btn {
     gap: 5px;
@@ -378,13 +479,52 @@ body {
     width: 100px;
   }
 }
+@media (min-width: 1600px) {
+  .color-samples li {
+    width: 110px;
+    border-radius: 20px;
+  }
+  .size-container ul li {
+    width: 90px;
+    height: 55px;
+    border-radius: 12px;
+  }
+}
 @media (max-width: 768px) {
   .single-product.lg\:col-span-3 img {
     height: 225px;
   }
+}
 
+.product-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.product-price {
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  .product-price {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1600px) {
   .product-title {
-    font-size: 14px;
+    font-size: 24px;
+  }
+  .product-price {
+    font-size: 20px;
+  }
+  .single-product-details {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 16px;
   }
 
   .color-variant {

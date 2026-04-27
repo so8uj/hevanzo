@@ -4,15 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css?v=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="assets/style.css?v=1.0">
     <title>HEVANZO | Single Product Page</title>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --breakpoint-xxl: 1600px;
+        }
+    </style>
+
+
 </head>
 
 <body>
 
-    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm">Welcome To Our Store</div>
+    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm xxl:text-lg">Welcome To Our Store</div>
     <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 w-full z-[100] bg-white shadow-sm">
         <div class="header-bottom py-2 lg:py-6">
             <div class="container">
@@ -43,7 +51,7 @@
                         </ul>
                     </div>
 
-                    <div class="logo w-2/4 lg:w-1/4 lg:text-left content-center">
+                    <div class="logo w-2/4 lg:w-1/4 text-center lg:text-left">
                         <a href="index.html" class="inline-block">
                             <img src="./assets/img/hevanzo-logo.svg" class="w-[110px] lg:w-[150px]" alt="HEVANZO">
                         </a>
@@ -106,7 +114,7 @@
 
                 <div class="grid grid-cols-12">
                     <div class="col-span-12 lg:col-span-6">
-                        <div class="left-product-image-container grid grid-cols-12 gap-5 pe-0 lg:pe-15">
+                        <div class="left-product-image-container grid grid-cols-12 gap-5 xl:gap-7 pe-0 lg:pe-20">
                             <div class="main-image col-span-12">
                                 <img src="./assets/img/single-main-image.jpg" alt="">
                             </div>
@@ -131,14 +139,15 @@
                         </div>
                     </div>
                     <div class="col-span-12 lg:col-span-6 mt-5 lg:mt-0">
-                        <div class="product-right-details ps-0 lg:ps-10">
-                            <h1 class="text-2xl leading-sm font-semibold">Logo Hoodie</h1>
-                            <p class="my-1"><del>€49.95</del> €44.95</p>
-                            <p class="mb-0 italic">Including VAT - Plus Shipping Costs</p>
+                        <div class="product-right-details ps-0 lg:ps-10 xxl:ps-20">
+                            <h1 class="text-2xl xxl:text-[42px] leading-sm font-semibold">Logo Hoodie</h1>
+                            <p class="my-1 xxl:my-4 text-sm xxl:text-[20px] font-semibold"><del
+                                    class="font-normal opacity-50">€49.95</del> €44.95</p>
+                            <p class="mb-0 italic xxl:text-lg">Including VAT - Plus Shipping Costs</p>
 
-                            <div class="color-and-size-chart-container mt-7" x-data="sobujFrontend">
+                            <div class="color-and-size-chart-container mt-7 xxl:mt-10" x-data="sobujFrontend">
                                 <div class="color-container">
-                                    <h5 class="selected-color font-semibold">Colour: <span
+                                    <h5 class="selected-color font-semibold xxl:text-xl">Colour: <span
                                             x-text="selectedColor">Heather Grey</span>
                                     </h5>
                                     <ul class="flex flex-wrap gap-4 mt-5 color-samples">
@@ -151,74 +160,80 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="size-container mt-9">
-                                    <div class="flex justify-between">
-                                        <h5 class="selected-color font-normal">Size: <span
+                                <div class="size-container mt-9 xxl:mt-12">
+                                    <div class="flex justify-between items-center">
+                                        <h5 class="selected-color font-normal xxl:text-xl">Size: <span
                                                 x-text="selectedSize">M</span>
                                         </h5>
-                                        <a href="#" class="underline">Size Chart</a>
+                                        <a href="#" class="underline xxl:text-xl">Size Chart</a>
                                     </div>
-                                    <ul class="flex flex-wrap gap-4 mt-5 color-samples">
+                                    <ul class="flex flex-wrap gap-4 mt-5 xxl:mt-8 color-samples">
                                         <li @click="selectedSize = 'XXS'"
                                             :class="{ 'selected': selectedSize === 'XXS' }"
-                                            class="content-center text-sm">XXS</li>
+                                            class="content-center text-sm xxl:text-lg">XXS</li>
                                         <li @click="selectedSize = 'XS'" :class="{ 'selected': selectedSize === 'XS' }"
-                                            class="content-center text-sm">XS</li>
+                                            class="content-center text-sm xxl:text-lg">XS</li>
                                         <li @click="selectedSize = 'S'" :class="{ 'selected': selectedSize === 'S' }"
-                                            class="content-center text-sm">S</li>
+                                            class="content-center text-sm xxl:text-lg">S</li>
                                         <li @click="selectedSize = 'M'" :class="{ 'selected': selectedSize === 'M' }"
-                                            class="content-center text-sm">M</li>
+                                            class="content-center text-sm xxl:text-lg">M</li>
                                         <li @click="selectedSize = 'L'" :class="{ 'selected': selectedSize === 'L' }"
-                                            class="content-center text-sm">L</li>
+                                            class="content-center text-sm xxl:text-lg">L</li>
                                         <li @click="selectedSize = 'XL'" :class="{ 'selected': selectedSize === 'XL' }"
-                                            class="content-center text-sm">XL</li>
+                                            class="content-center text-sm xxl:text-lg">XL</li>
                                     </ul>
                                 </div>
-                                <div class="quantity-btn-container mt-5 mb-8">
+                                <div class="quantity-btn-container mt-5 mb-8 xxl:mt-10 xxl:mb-10">
                                     <div class="quantity-container">
                                         <button @click="decrementQty()" class="quantity-btn"><img
                                                 src="./assets/img/icons/minus-icon.svg" alt="Minus Icon"></button>
-                                        <span class="quantity font-semibold text-sm" x-text="quantity">1</span>
+                                        <span class="quantity font-semibold text-sm xxl:text-xl"
+                                            x-text="quantity">1</span>
                                         <button @click="incrementQty()" class="quantity-btn"><img
                                                 src="./assets/img/icons/plus-icon.svg" alt="Plus Icon"></button>
                                     </div>
                                 </div>
                                 <div class="add-to-cart-and-buy-now-container">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <p class="mb-0 text-sm italic">Delivery Time: 5 Working Days</p>
-                                        <p class="mb-0 text-sm italic">HEVANZO - Made Different</p>
+                                    <div class="flex justify-between items-center mb-4 xxl:mb-9">
+                                        <p class="mb-0 text-sm xxl:text-xl italic">Delivery Time: 5 Working Days</p>
+                                        <p class="mb-0 text-sm xxl:text-xl italic">HEVANZO - Made Different</p>
                                     </div>
                                     <div class="buttons-containers flex justify-between items-center p-[7px]">
-                                        <button class="btn-b btn btn-sm">Add to Cart <img
-                                                src="./assets/img/icons/arrow-right-top.svg"
+                                        <button class="btn-b btn btn-sm xxl:btn-md">Add
+                                            to Cart <img src="./assets/img/icons/arrow-right-top.svg"
                                                 alt="Arrow Right Icon"></button>
-                                        <button class="btn-b btn btn-sm">Buy Now <img
-                                                src="./assets/img/icons/arrow-right-top.svg"
+                                        <button class="btn-b btn btn-sm xxl:btn-md">Buy
+                                            Now <img src="./assets/img/icons/arrow-right-top.svg"
                                                 alt="Arrow Right Icon"></button>
                                     </div>
                                 </div>
 
-                                <div class="description-container mt-13">
+                                <div class="description-container mt-13 xxl:mt-20">
                                     <ul>
-                                        <li class="flex items-center justify-between text-sm font-normal">
+                                        <li
+                                            class="flex items-center justify-between text-sm xxl:text-2xl font-normal  border-[#18181810] py-3 xxl:py-6">
                                             <p>Description & Fit</p><img src="./assets/img/icons/arrow-right.svg"
-                                                width="16px" alt="Arrow Right Icon">
+                                                width="16px" class="xxl:w-6" alt="Arrow Right Icon">
                                         </li>
-                                        <li class="flex items-center justify-between text-sm font-normal">
+                                        <li
+                                            class="flex items-center justify-between text-sm xxl:text-2xl font-normal  border-[#18181810] py-3 xxl:py-6">
                                             <p>Material</p><img src="./assets/img/icons/arrow-right.svg" width="16px"
-                                                alt="Arrow Right Icon">
+                                                class="xxl:w-6" alt="Arrow Right Icon">
                                         </li>
-                                        <li class="flex items-center justify-between text-sm font-normal">
+                                        <li
+                                            class="flex items-center justify-between text-sm xxl:text-2xl font-normal  border-[#18181810] py-3 xxl:py-6">
                                             <p>Care Guide</p><img src="./assets/img/icons/arrow-right.svg" width="16px"
-                                                alt="Arrow Right Icon">
+                                                class="xxl:w-6" alt="Arrow Right Icon">
                                         </li>
-                                        <li class="flex items-center justify-between text-sm font-normal">
+                                        <li
+                                            class="flex items-center justify-between text-sm xxl:text-2xl font-normal  border-[#18181810] py-3 xxl:py-6">
                                             <p>Delivery & Payments</p><img src="./assets/img/icons/arrow-right.svg"
-                                                width="16px" alt="Arrow Right Icon">
+                                                width="16px" class="xxl:w-6" alt="Arrow Right Icon">
                                         </li>
-                                        <li class="flex items-center justify-between text-sm font-normal">
+                                        <li
+                                            class="flex items-center justify-between text-sm xxl:text-2xl font-normal py-3 xxl:py-6">
                                             <p>Free Returns</p><img src="./assets/img/icons/arrow-right.svg"
-                                                width="16px" alt="Arrow Right Icon">
+                                                width="16px" class="xxl:w-6" alt="Arrow Right Icon">
                                         </li>
                                     </ul>
                                 </div>
@@ -239,7 +254,7 @@
 
                 <div class="product-grid grid grid-cols-12 gap-[16px] lg:gap-[30px] mb-[30px]">
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/1.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -254,11 +269,11 @@
                                     <div class="color" style="background: #fff;"></div>
                                 </li>
                             </ul>
-                            <p class="product-price"> <del>€39.95</del> €35.95</p>
+                            <p class="product-price"> <del class="opacity-50 font-normal">€39.95</del> €35.95</p>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/2.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -281,13 +296,13 @@
                         <div class="product-image relative">
                             <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
-                                <h2 class="text-[28px] font-bold">Oversize Sweats</h2>
-                                <p class="text-sm italic">Crafted for comfort and everyday wear.</p>
+                                <h2 class="text-[28px] xl:text-[42px] font-bold">Oversize Sweats</h2>
+                                <p class="text-sm xl:text-lg italic">Crafted for comfort and everyday wear.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/3.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -305,7 +320,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/4.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -323,7 +338,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/5.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -341,7 +356,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/6.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -364,7 +379,7 @@
             </div>
         </section>
 
-        <section class="sec-padding border-t-1 mt-12 border-b-1 border-[#18181850]">
+        <section class="sec-padding border-t-1 mt-12  border-[#18181850]">
             <div class="container">
                 <div class="grid grid-cols-12 gap-6">
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -372,9 +387,10 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/shipping-global.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Fast & Free Shipping
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xl:text-xl">Fast & Free
+                                Shipping
                             </h5>
-                            <p class="italic mb-0 text-xs lg:text-sm">Fast & Free Shipping On 1+ Items</p>
+                            <p class="italic mb-0 text-xs lg:text-sm xl:text-lg">Fast & Free Shipping On 1+ Items</p>
                         </div>
                     </div>
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -382,9 +398,10 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/arrow-return.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Hassle Free Returns
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xl:text-xl">Hassle Free
+                                Returns
                             </h5>
-                            <p class="italic mb-0 text-xs lg:text-sm">14 Days Easy Returns.</p>
+                            <p class="italic mb-0 text-xs lg:text-sm xl:text-lg">14 Days Easy Returns.</p>
                         </div>
                     </div>
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -392,9 +409,11 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/lock.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Secure Checkout
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xl:text-xl">Secure
+                                Checkout
                             </h5>
-                            <p class="italic mb-0 text-xs lg:text-sm">All Payments Are Processed Securely</p>
+                            <p class="italic mb-0 text-xs lg:text-sm xl:text-lg">All Payments Are Processed Securely
+                            </p>
                         </div>
                     </div>
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -402,9 +421,10 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/support.svg" width=" 24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Customer Service
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xl:text-xl">Customer
+                                Service
                             </h5>
-                            <p class="italic text-xs lg:text-sm">Our Support Is Available 24/7</p>
+                            <p class="italic text-xs lg:text-sm xl:text-lg">Our Support Is Available 24/7</p>
                         </div>
                     </div>
                 </div>
@@ -447,8 +467,8 @@
                     <div class="col-span-12 lg:col-span-6">
                         <div class="grid grid-cols-2 gap-y-6 mb-10">
                             <div class="col-span-1 ps-4 lg:ps-0">
-                                <h4 class="font-bold text-xl">Company</h4>
-                                <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                <h4 class="font-bold text-xl xl:text-3xl">Company</h4>
+                                <ul class="py-4 flex flex-col gap-y-4 text-sm xl:text-xl">
                                     <li><a href="#">Home</a></li>
                                     <li><a href="#">All Products</a></li>
                                     <li><a href="#">New Arrival</a></li>
@@ -457,8 +477,8 @@
                             </div>
                             <div class="col-span-1 flex justify-end lg:justify-start ">
                                 <div class="pe-4 lg:pe-0">
-                                    <h4 class="font-bold text-xl">Others</h4>
-                                    <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                    <h4 class="font-bold text-xl xl:text-3xl">Others</h4>
+                                    <ul class="py-4 flex flex-col gap-y-4 text-sm xl:text-xl">
                                         <li><a href="#">Terms & Conditions</a></li>
                                         <li><a href="#">Shipping Guidelines</a></li>
                                         <li><a href="#">Return Policy</a></li>
@@ -473,34 +493,37 @@
             </div>
             <div class="footer-bottom border-t-1 border-[#18181850] mt-[40px] lg:mt-[80px] py-[30px] lg:py-[50px]">
                 <div
-                    class="container flex flex-col md:flex-row items-center justify-between gap-y-4 text-center md:text-left text-sm">
+                    class="container flex flex-col md:flex-row items-center justify-between gap-y-4 text-center md:text-left text-sm xl:text-lg">
                     <p>&copy; 2026 HEVANZO. All rights reserved.</p>
                     <p>Developed by <a href="#">Arham Techpro</a></p>
                 </div>
             </div>
         </footer>
-    </main>
+        </header>
 
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('sobujFrontend', () => ({
-                // Product Selection State
-                selectedColor: 'Heather Grey',
-                selectedSize: 'M',
-                quantity: 1,
 
-                // Selection Methods
-                incrementQty() {
-                    this.quantity++;
-                },
-                decrementQty() {
-                    if (this.quantity > 1) {
-                        this.quantity--;
+
+
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('sobujFrontend', () => ({
+                    // Product Selection State
+                    selectedColor: 'Heather Grey',
+                    selectedSize: 'M',
+                    quantity: 1,
+
+                    // Selection Methods
+                    incrementQty() {
+                        this.quantity++;
+                    },
+                    decrementQty() {
+                        if (this.quantity > 1) {
+                            this.quantity--;
+                        }
                     }
-                }
-            }))
-        })
-    </script>
+                }))
+            })
+        </script>
 </body>
 
 </html>

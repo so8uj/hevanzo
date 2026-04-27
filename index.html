@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css?v=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="assets/style.css?v=1.0">
-    <title>HEVANZO</title>
+    <title>HEVANZO | Premium Over-Sized Fashion</title>
+
+    <style type="text/tailwindcss">
+        @theme {
+            --breakpoint-xxl: 1600px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm">Welcome To Our Store</div>
-    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 w-full z-[100] bg-white shadow-sm relative">
+    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm xxl:text-lg">Welcome To Our Store</div>
+    <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 w-full z-[100] bg-white shadow-sm">
         <div class="header-bottom py-2 lg:py-6">
             <div class="container">
-                <div class="main-header flex flex-wrap items-center justify-between">
+                <div class="main-header flex flex-wrap items-center justify-between relative relative">
 
 
                     <div class="header-left-mobile w-1/4 lg:w-1/4 block lg:hidden">
@@ -43,7 +49,7 @@
                         </ul>
                     </div>
 
-                    <div class="logo w-2/4 lg:w-1/4 lg:text-left content-center">
+                    <div class="logo w-2/4 lg:w-1/4 text-center lg:text-left">
                         <a href="index.html" class="inline-block">
                             <img src="./assets/img/hevanzo-logo.svg" class="w-[110px] lg:w-[150px]" alt="HEVANZO">
                         </a>
@@ -52,7 +58,7 @@
                     <nav class="nav w-full lg:w-2/4 absolute lg:static top-[33px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
                         :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
                         <ul
-                            class="flex flex-col items-start lg:flex-row lg:items-center gap-y-4 lg:gap-y-0 gap-x-[30px] main-nav justify-start lg:justify-center">
+                            class="flex flex-col lg:flex-row items-center gap-y-4 lg:gap-y-0 gap-x-[30px] main-nav justify-center">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="./products.html">All Products</a></li>
                             <li><a href="#">New Arrivals</a></li>
@@ -113,10 +119,14 @@
                             class="banner-content flex flex-col md:flex-row items-start md:items-end justify-between gap-y-6 md:gap-y-0">
 
                             <div class="content-left-part text-center lg:text-left w-full">
-                                <h1 class="font-bold text-[28px] md:text-[46px] color-a mb-0 leading-none">HEVANZO -
+                                <h1
+                                    class="font-bold text-[28px] md:text-[46px] xxl:text-[72px] color-a mb-0 leading-none">
+                                    HEVANZO -
                                     Made
                                     Different</h1>
-                                <p class="text-[18px] md:text-[22px] italic color-a my-[15px] md:my-[30px]">The Oversize
+                                <p
+                                    class="text-[18px] md:text-[22px] xxl:text-[32px] italic color-a my-[15px] md:my-[30px]">
+                                    The Oversize
                                     Collection.</p>
                                 <a href="./products.html" class="btn-a btn btn-sm md:btn-md">Shop Collection <img
                                         src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
@@ -150,10 +160,14 @@
                             class="banner-content flex flex-col md:flex-row items-start md:items-end justify-between gap-y-6 md:gap-y-0">
 
                             <div class="content-left-part text-center lg:text-left w-full">
-                                <h1 class="font-bold text-[28px] md:text-[46px] color-a mb-0 leading-none">HEVANZO -
+                                <h1
+                                    class="font-bold text-[28px] md:text-[46px] xxl:text-[72px] color-a mb-0 leading-none">
+                                    HEVANZO -
                                     Made
                                     Different</h1>
-                                <p class="text-[18px] md:text-[22px] italic color-a my-[15px] md:my-[30px]">The Oversize
+                                <p
+                                    class="text-[18px] md:text-[22px] xxl:text-[32px] italic color-a my-[15px] md:my-[30px]">
+                                    The Oversize
                                     Collection.</p>
                                 <a href="./products.html" class="btn-a btn btn-sm md:btn-md">Shop Collection <img
                                         src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
@@ -188,17 +202,17 @@
 
                 <div class="product-grid grid grid-cols-12 gap-[16px] lg:gap-[30px] mb-[30px]">
 
-                    <div class="single-product col-span-12 lg:col-span-6 full-image block lg:hidden">
+                    <div class="single-product col-span-12 lg:col-span-12 full-image block lg:hidden">
                         <div class="product-image relative">
                             <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
-                                <h2 class="text-[28px] font-bold">Oversize Sweats</h2>
-                                <p class="text-sm italic">Crafted for comfort and everyday wear.</p>
+                                <h2 class="text-[28px] xxl:text-[42px] font-bold">Oversize Sweats</h2>
+                                <p class="text-sm xxl:text-lg italic">Crafted for comfort and everyday wear.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/1.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -213,11 +227,11 @@
                                     <div class="color" style="background: #fff;"></div>
                                 </li>
                             </ul>
-                            <p class="product-price"> <del>€39.95</del> €35.95</p>
+                            <p class="product-price"> <del class="opacity-50 font-normal">€39.95</del> €35.95</p>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/2.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -240,13 +254,13 @@
                         <div class="product-image relative">
                             <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
-                                <h2 class="text-[28px] font-bold">Oversize Sweats</h2>
-                                <p class="text-sm italic">Crafted for comfort and everyday wear.</p>
+                                <h2 class="text-[28px] xxl:text-[42px] font-bold">Oversize Sweats</h2>
+                                <p class="text-sm xxl:text-lg italic">Crafted for comfort and everyday wear.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/3.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -264,7 +278,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/4.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -282,7 +296,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/5.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -300,7 +314,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/6.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -322,16 +336,17 @@
                         <div class="product-image relative">
                             <img src="./assets/img/product-showcase.jpg" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
-                                <h2 class="text-[28px] font-bold mb-0 leading-none">Oversize T-Shirt & Shorts
+                                <h2 class="text-[28px] xxl:text-[48px] font-bold mb-0 leading-none">Oversize T-Shirt &
+                                    Shorts
                                 </h2>
-                                <p class="text-sm italic my-1 lg:my-3">Relaxed fit, everyday comfort. </p>
+                                <p class="text-sm xxl:text-lg italic my-1 lg:my-3">Relaxed fit, everyday comfort. </p>
                                 <a href="./products.html" class="btn-a btn btn-sm md:btn-md">Shop Now <img
                                         src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-6.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -349,7 +364,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/7.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -367,7 +382,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/product-7.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -385,7 +400,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-3">
+                    <div class="single-product col-span-6 lg:col-span-3">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/8.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -418,9 +433,10 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/shipping-global.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Fast & Free Shipping
+                            <h5 class="py-2 xxl:py-4 leading-none mb-0 font-semibold text-sm lg:text-md xxl:text-xl">
+                                Fast & Free Shipping
                             </h5>
-                            <p class="italic mb-0 text-xs lg:text-sm">Fast & Free Shipping On 1+ Items</p>
+                            <p class="italic mb-0 text-xs lg:text-sm xxl:text-lg">Fast & Free Shipping On 1+ Items</p>
                         </div>
                     </div>
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -428,9 +444,10 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/arrow-return.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Hassle Free Returns
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xxl:text-xl">Hassle Free
+                                Returns
                             </h5>
-                            <p class="italic mb-0 text-xs lg:text-sm">14 Days Easy Returns.</p>
+                            <p class="italic mb-0 text-xs lg:text-sm xxl:text-lg">14 Days Easy Returns.</p>
                         </div>
                     </div>
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -438,9 +455,11 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/lock.svg" width="24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Secure Checkout
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xxl:text-xl">Secure
+                                Checkout
                             </h5>
-                            <p class="italic mb-0 text-xs lg:text-sm">All Payments Are Processed Securely</p>
+                            <p class="italic mb-0 text-xs lg:text-sm xxl:text-lg">All Payments Are Processed Securely
+                            </p>
                         </div>
                     </div>
                     <div class="col-span-6 sm:col-span-6 lg:col-span-3">
@@ -448,9 +467,10 @@
                             <div class="box-image content-center w-12 h-12 bg-a rounded-full mx-auto">
                                 <img src="./assets/img/icons/support.svg" width=" 24px" alt="Icon">
                             </div>
-                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md">Customer Service
+                            <h5 class="py-2 leading-none mb-0 font-semibold text-sm lg:text-md xxl:text-xl">Customer
+                                Service
                             </h5>
-                            <p class="italic text-xs lg:text-sm">Our Support Is Available 24/7</p>
+                            <p class="italic text-xs lg:text-sm xxl:text-lg">Our Support Is Available 24/7</p>
                         </div>
                     </div>
                 </div>
@@ -462,7 +482,7 @@
                 <div class="grid grid-cols-12 gap-y-10">
                     <div class="col-span-12 lg:col-span-4">
                         <div class="footer-box text-center lg:text-left">
-                            <h3 class="font-bold text-2xl">Join Our Vip Club & Get 15% Off</h3>
+                            <h3 class="font-bold text-2xl xxl:text-4xl">Join Our Vip Club & Get 15% Off</h3>
                             <div class="subscriber-box py-8 lg:py-[56px]">
                                 <form action="#"
                                     class="bg-white mr-0 lg:mr-5 flex justify-between rounded-full p-[5px] ps-4 border-1 border-[#181818]">
@@ -493,8 +513,8 @@
                     <div class="col-span-12 lg:col-span-6">
                         <div class="grid grid-cols-2 gap-y-6 mb-10">
                             <div class="col-span-1 ps-4 lg:ps-0">
-                                <h4 class="font-bold text-xl">Company</h4>
-                                <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                <h4 class="font-bold text-xl xxl:text-3xl">Company</h4>
+                                <ul class="py-4 flex flex-col gap-y-4 text-sm xxl:text-xl">
                                     <li><a href="#">Home</a></li>
                                     <li><a href="#">All Products</a></li>
                                     <li><a href="#">New Arrival</a></li>
@@ -503,8 +523,8 @@
                             </div>
                             <div class="col-span-1 flex justify-end lg:justify-start ">
                                 <div class="pe-4 lg:pe-0">
-                                    <h4 class="font-bold text-xl">Others</h4>
-                                    <ul class="py-4 flex flex-col gap-y-4 text-sm">
+                                    <h4 class="font-bold text-xl xxl:text-3xl">Others</h4>
+                                    <ul class="py-4 flex flex-col gap-y-4 text-sm xxl:text-xl">
                                         <li><a href="#">Terms & Conditions</a></li>
                                         <li><a href="#">Shipping Guidelines</a></li>
                                         <li><a href="#">Return Policy</a></li>
@@ -519,7 +539,7 @@
             </div>
             <div class="footer-bottom border-t-1 border-[#18181850] mt-[40px] lg:mt-[80px] py-[30px] lg:py-[50px]">
                 <div
-                    class="container flex flex-col md:flex-row items-center justify-between gap-y-4 text-center md:text-left text-sm">
+                    class="container flex flex-col md:flex-row items-center justify-between gap-y-4 text-center md:text-left text-sm xxl:text-lg">
                     <p>&copy; 2026 HEVANZO. All rights reserved.</p>
                     <p>Developed by <a href="#">Arham Techpro</a></p>
                 </div>
