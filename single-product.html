@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css?v=1.1">
+    <link rel="stylesheet" href="assets/style.css?v=1.3">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>HEVANZO | Single Product Page</title>
@@ -109,35 +109,96 @@
 
     <main>
 
-        <section class="product-category sec-padding">
+        <section class="single-product-page-section sec-padding">
             <div class="container">
 
                 <div class="grid grid-cols-12">
+
+
+
                     <div class="col-span-12 lg:col-span-6">
-                        <div class="left-product-image-container grid grid-cols-12 gap-5 xl:gap-7 pe-0 lg:pe-20">
+
+                        <!-- MOBILE SLIDER -->
+                        <div x-data="mobileProductSlider()" x-init="init()" class="block lg:hidden">
+
+                            <!-- Slides Wrapper (Swipe + Drag Enabled) -->
+                            <div class="relative overflow-hidden rounded-xl cursor-grab active:cursor-grabbing"
+                                x-on:touchstart="startDrag($event)" x-on:touchmove="onDrag($event)"
+                                x-on:touchend="endDrag()" x-on:mousedown="startDrag($event)"
+                                x-on:mousemove="onDrag($event)" x-on:mouseup="endDrag()" x-on:mouseleave="endDrag()">
+
+                                <div class="flex transition-transform duration-500 ease-out bulk-image-slider"
+                                    :style="`transform: translateX(calc(-${active * 100}% + ${dragOffset}px))`">
+
+                                    <template x-for="(image, index) in images" :key="index">
+
+                                        <div class="min-w-full select-none">
+                                            <img :src="image" class="w-full h-auto object-cover pointer-events-none"
+                                                alt="">
+                                        </div>
+
+                                    </template>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Dots -->
+                            <div class="product-slider-dots flex items-center justify-between w-full ">
+
+                                <div class="flex items-center gap-2 ">
+
+                                    <template x-for="(image, index) in images" :key="index">
+
+                                        <button @click="goTo(index)" class="dot"
+                                            :class="active === index ? 'active' : ''"></button>
+
+                                    </template>
+
+                                </div>
+
+                                <button class="btn-a btn btn-sm xxl:btn-md font-semibold"><img class="normal-btn-icon"
+                                        src="./assets/img/icons/youtube-icon-2.svg" alt="Youtube Icon"> Product Video
+                                    <img src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DESKTOP GRID -->
+                        <div
+                            class="hidden lg:grid left-product-image-container grid-cols-12 gap-5 xl:gap-7 pe-0 lg:pe-20">
+
                             <div class="main-image col-span-12">
                                 <img src="./assets/img/single-main-image.jpg" alt="">
                             </div>
-                            <div class="youtube-thumb col-span-12">
+
+                            <div class="youtube-thumb hidden lg:block col-span-12">
                                 <img src="./assets/img/youtube-thumb.jpg" alt="">
                             </div>
 
                             <div class="bulk-image col-span-12 md:col-span-6">
                                 <img src="./assets/img/bulk-image.jpg" alt="">
                             </div>
-                            <div class="bulk-image col-span-12 md:col-span-6">
-                                <img src="./assets/img/bulk-image.jpg" alt="">
-                            </div>
-                            <div class="bulk-image col-span-12 md:col-span-6">
-                                <img src="./assets/img/bulk-image.jpg" alt="">
-                            </div>
+
                             <div class="bulk-image col-span-12 md:col-span-6">
                                 <img src="./assets/img/bulk-image.jpg" alt="">
                             </div>
 
+                            <div class="bulk-image col-span-12 md:col-span-6">
+                                <img src="./assets/img/bulk-image.jpg" alt="">
+                            </div>
+
+                            <div class="bulk-image col-span-12 md:col-span-6">
+                                <img src="./assets/img/bulk-image.jpg" alt="">
+                            </div>
 
                         </div>
+
                     </div>
+
+
                     <div class="col-span-12 lg:col-span-6 mt-5 lg:mt-0">
                         <div class="product-right-details ps-0 lg:ps-10 xxl:ps-20">
                             <h1 class="text-2xl xxl:text-[42px] leading-sm font-semibold">Logo Hoodie</h1>
@@ -254,7 +315,17 @@
 
                 <div class="product-grid grid grid-cols-12 gap-[16px] lg:gap-[30px] mb-[30px]">
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
+                    <div class="single-product col-span-12 lg:col-span-6 full-image block lg:hidden">
+                        <div class="product-image relative">
+                            <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
+                            <div class="product-overly-detail color-a">
+                                <h2 class="text-[28px] xl:text-[42px] font-bold">Oversize Sweats</h2>
+                                <p class="text-sm xl:text-lg italic">Crafted for comfort and everyday wear.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/1.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -273,7 +344,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
+                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/2.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -292,7 +363,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 lg:col-span-6 full-image">
+                    <div class="single-product col-span-12 lg:col-span-6 full-image hidden lg:block">
                         <div class="product-image relative">
                             <img src="./assets/img/full-image-1.png" class="w-full" alt="Product Image">
                             <div class="product-overly-detail color-a">
@@ -302,7 +373,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
+                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/3.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -320,7 +391,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
+                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/4.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -338,7 +409,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
+                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/5.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -356,7 +427,7 @@
                         </div>
                     </div>
 
-                    <div class="single-product col-span-12 sm:col-span-6 lg:col-span-6 xl:col-span-4">
+                    <div class="single-product col-span-6 sm:col-span-6 lg:col-span-6 xl:col-span-4">
                         <a href="single-product.html" class="product-image block">
                             <img src="./assets/img/6.jpg" class="w-full" alt="Product Image">
                         </a>
@@ -524,6 +595,82 @@
                 }))
             })
         </script>
+
+        <script>
+            function mobileProductSlider() {
+                return {
+
+                    active: 0,
+
+                    images: [
+                        './assets/img/single-main-image.jpg',
+                        './assets/img/bulk-image.jpg',
+                        './assets/img/bulk-image.jpg',
+                        './assets/img/bulk-image.jpg',
+                        './assets/img/bulk-image.jpg',
+                    ],
+
+                    // Drag state
+                    startX: 0,
+                    currentX: 0,
+                    dragging: false,
+                    dragOffset: 0,
+
+                    init() {
+                        if (window.innerWidth >= 1024) return;
+                    },
+
+                    // Start drag
+                    startDrag(e) {
+                        this.dragging = true;
+                        this.startX = e.touches ? e.touches[0].clientX : e.clientX;
+                    },
+
+                    // Move drag
+                    onDrag(e) {
+                        if (!this.dragging) return;
+
+                        this.currentX = e.touches ? e.touches[0].clientX : e.clientX;
+
+                        this.dragOffset = this.currentX - this.startX;
+                    },
+
+                    // End drag
+                    endDrag() {
+                        if (!this.dragging) return;
+
+                        this.dragging = false;
+
+                        const threshold = 60;
+
+                        if (this.dragOffset > threshold) {
+                            this.prev();
+                        }
+                        else if (this.dragOffset < -threshold) {
+                            this.next();
+                        }
+
+                        this.dragOffset = 0;
+                    },
+
+                    next() {
+                        this.active =
+                            (this.active + 1) % this.images.length;
+                    },
+
+                    prev() {
+                        this.active =
+                            (this.active - 1 + this.images.length)
+                            % this.images.length;
+                    },
+
+                    goTo(index) {
+                        this.active = index;
+                    }
+                }
+            }
+        </script>
+
 </body>
 
 </html>
