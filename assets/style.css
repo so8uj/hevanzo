@@ -651,3 +651,9 @@ body {
   padding: 0 !important;
   border-radius: 0 !important;
 }
+
+@media (max-width: 399px) {
+  input.border-none.outline-0 {
+    width: 170px;
+  }
+}
