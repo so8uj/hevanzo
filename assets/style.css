@@ -428,7 +428,7 @@ body {
   font-weight: bold;
 }
 .size-container {
-  width: 100%;
+  width: fit-content;
 }
 
 .quantity-container {
@@ -584,7 +584,7 @@ body {
   .single-product.full-image-section .product-image img {
     object-fit: cover;
     height: 100%;
-    border-radius: 0px !important;
+    /* border-radius: 0px !important; */
   }
 }
 
@@ -655,5 +655,11 @@ body {
 @media (max-width: 399px) {
   input.border-none.outline-0 {
     width: 170px;
+  }
+  .header-right ul li a span,
+  .header-left-mobile ul li a span {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
   }
 }
