@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css?v=1.5">
+    <link rel="stylesheet" href="assets/style.css?v=1.6">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>HEVANZO | Premium Over-Sized Fashion</title>
@@ -51,12 +51,12 @@
 
                     <div class="logo w-1/3 lg:w-1/4 text-center lg:text-left">
                         <a href="index.html" class="inline-block">
-                            <img src="./assets/img/hevanzo-logo.svg" class="w-[80px] sm:w-[110px] lg:w-[150px]"
+                            <img src="./assets/img/hevanzo.svg" class="w-[100px] sm:w-[110px] lg:w-[150px] mt-2 lg:mt-0"
                                 alt="HEVANZO">
                         </a>
                     </div>
 
-                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[33px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
+                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[48px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
                         :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
                         <ul
                             class="flex flex-col lg:flex-row items-start lg:items-center gap-y-4 lg:gap-y-0 gap-x-[30px] main-nav justify-center">
@@ -65,12 +65,170 @@
                             <li><a href="#">New Arrivals</a></li>
                             <li><a href="#">Customer Service</a></li>
                         </ul>
+
+                        <div class="menu-product-slider block lg:hidden" x-data="{
+                            scrollNext() { this.$refs.slider.scrollBy({ left: this.$refs.slider.offsetWidth / 2 + 8, behavior: 'smooth' }) },
+                            scrollPrev() { this.$refs.slider.scrollBy({ left: -(this.$refs.slider.offsetWidth / 2 + 8), behavior: 'smooth' }) }
+                        }" :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
+                            <h3 class="pt-[34px] pb-3">Our Best Selling Products</h3>
+
+                            <div class="relative mb-[30px]">
+                                <!-- Arrows -->
+                                <div
+                                    class="absolute h-[225px] lg:h-[360px] xxl:h-[500px] left-0 flex items-center z-10 pointer-events-none">
+                                    <button @click="scrollPrev()"
+                                        class="pointer-events-auto border-0 ml-4 cursor-pointer">
+                                        <img src="./assets/img/icons/angle-left.svg"
+                                            class="w-3 lg:w-6 group-hover:invert" alt="Prev">
+                                    </button>
+                                </div>
+                                <div
+                                    class="absolute h-[225px] lg:h-[360px] xxl:h-[500px] right-0 flex items-center z-10 pointer-events-none">
+                                    <button @click="scrollNext()"
+                                        class="pointer-events-auto border-0 mr-4 cursor-pointer">
+                                        <img src="./assets/img/icons/angle-right.svg"
+                                            class="w-3 lg:w-6 group-hover:invert" alt="Next">
+                                    </button>
+                                </div>
+
+                                <div x-ref="slider"
+                                    class="product-grid flex overflow-x-auto scrollbar-hide gap-[16px] lg:gap-[30px] scroll-smooth">
+
+                                    <div class="single-product menu-slider-item">
+                                        <a href="single-product.html" class="product-image block">
+                                            <img src="./assets/img/1.jpg" class="w-full" alt="Product Image">
+                                        </a>
+                                        <div class="single-product-details">
+                                            <h3 class="product-title"><a href="single-product.html">Open Leg Jogger</a>
+                                            </h3>
+                                            <ul class="color-variant flex gap-x-2 py-2">
+                                                <li class="content-center active">
+                                                    <div class="color" style="background: #000;"></div>
+                                                </li>
+                                                <li class="content-center">
+                                                    <div class="color" style="background: #fff;"></div>
+                                                </li>
+                                            </ul>
+                                            <p class="product-price"> <del class="opacity-50 font-normal">€39.95</del>
+                                                €35.95</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-product menu-slider-item">
+                                        <a href="single-product.html" class="product-image block">
+                                            <img src="./assets/img/2.jpg" class="w-full" alt="Product Image">
+                                        </a>
+                                        <div class="single-product-details">
+                                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie</a>
+                                            </h3>
+                                            <ul class="color-variant flex gap-x-2 py-2">
+                                                <li class="content-center">
+                                                    <div class="color" style="background: #000;"></div>
+                                                </li>
+                                                <li class="active content-center">
+                                                    <div class="color" style="background: #fff;"></div>
+                                                </li>
+                                            </ul>
+                                            <p class="product-price"> <del class="opacity-50 font-normal">€49.95</del>
+                                                €44.95</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-product menu-slider-item">
+                                        <a href="single-product.html" class="product-image block">
+                                            <img src="./assets/img/3.jpg" class="w-full" alt="Product Image">
+                                        </a>
+                                        <div class="single-product-details">
+                                            <h3 class="product-title"><a href="single-product.html">Blank Hoodie</a>
+                                            </h3>
+                                            <ul class="color-variant flex gap-x-2 py-2">
+                                                <li class="content-center">
+                                                    <div class="color" style="background: #000;"></div>
+                                                </li>
+                                                <li class="active content-center">
+                                                    <div class="color" style="background: #fff;"></div>
+                                                </li>
+                                            </ul>
+                                            <p class="product-price"> <del class="opacity-50 font-normal">€49.95</del>
+                                                €44.95</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-product menu-slider-item">
+                                        <a href="single-product.html" class="product-image block">
+                                            <img src="./assets/img/4.jpg" class="w-full" alt="Product Image">
+                                        </a>
+                                        <div class="single-product-details">
+                                            <h3 class="product-title"><a href="single-product.html">Blank Zip Hoodie</a>
+                                            </h3>
+                                            <ul class="color-variant flex gap-x-2 py-2">
+                                                <li class="content-center active">
+                                                    <div class="color" style="background: #000;"></div>
+                                                </li>
+                                                <li class="content-center">
+                                                    <div class="color" style="background: #fff;"></div>
+                                                </li>
+                                            </ul>
+                                            <p class="product-price"> <del class="opacity-50 font-normal">€54.95</del>
+                                                €49.95</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-product menu-slider-item">
+                                        <a href="single-product.html" class="product-image block">
+                                            <img src="./assets/img/5.jpg" class="w-full" alt="Product Image">
+                                        </a>
+                                        <div class="single-product-details">
+                                            <h3 class="product-title"><a href="single-product.html">Logo Hoodie</a></h3>
+                                            <ul class="color-variant flex gap-x-2 py-2">
+                                                <li class="active content-center">
+                                                    <div class="color" style="background: #000;"></div>
+                                                </li>
+                                                <li class="content-center">
+                                                    <div class="color" style="background: #fff;"></div>
+                                                </li>
+                                            </ul>
+                                            <p class="product-price"> <del class="opacity-50 font-normal">€49.95</del>
+                                                €44.95</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="single-product menu-slider-item">
+                                        <a href="single-product.html" class="product-image block">
+                                            <img src="./assets/img/6.jpg" class="w-full" alt="Product Image">
+                                        </a>
+                                        <div class="single-product-details">
+                                            <h3 class="product-title"><a href="single-product.html">Hevanzo - Cap</a>
+                                            </h3>
+                                            <ul class="color-variant flex gap-x-2 py-2">
+                                                <li class="active content-center">
+                                                    <div class="color" style="background: #000;"></div>
+                                                </li>
+                                                <li class="content-center">
+                                                    <div class="color" style="background: #fff;"></div>
+                                                </li>
+                                            </ul>
+                                            <p class="product-price"> <del class="opacity-50 font-normal">€19.95</del>
+                                                €14.95</p>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="text-center pb-2">
+                                <a href="./products.html" class="btn-b btn btn-sm md:btn-md">Shop Collection <img
+                                        src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
+                            </div>
+
                     </nav>
 
                     <div class="header-right w-1/3 lg:w-1/4">
                         <ul class="flex items-center gap-x-[16px] justify-end">
                             <li class="language-switcher lg:mr-3">
-                                <select name="language" id="language" class="text-xs lg:text-[16px]">
+                                <select name="language" id="language" class="text-[16px]">
                                     <option value="en">En</option>
                                     <option value="bn">Bn</option>
                                 </select>

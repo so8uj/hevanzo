@@ -663,3 +663,28 @@ body {
     font-size: 8px;
   }
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.product-grid {
+  scroll-snap-type: x mandatory;
+}
+
+.menu-slider-item {
+  flex: 0 0 calc(50% - 8px);
+  scroll-snap-align: start;
+}
+.menu-slider-item img{
+  height: 200px;
+  object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .menu-slider-item {
+    flex: 0 0 calc(25% - 22.5px);
+  }
+}
