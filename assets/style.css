@@ -179,7 +179,7 @@ body {
   position: absolute;
   top: -4px;
   right: -10px;
-  background: #fff;
+  background-color: #fff;
   color: var(--color-b);
   font-size: 10px;
   width: 16px;
