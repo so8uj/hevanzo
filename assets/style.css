@@ -185,7 +185,7 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-b);
@@ -688,3 +688,4 @@ body {
     flex: 0 0 calc(25% - 22.5px);
   }
 }
+

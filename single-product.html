@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css?v=1.7">
+    <link rel="stylesheet" href="assets/style.css?v=1.8">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>HEVANZO | Single Product Page</title>
@@ -20,7 +20,23 @@
 
 <body>
 
-    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm xxl:text-lg">Welcome To Our Store</div>
+    <div class="header-top text-center bg-a italic py-2 text-xs md:text-sm xxl:text-lg overflow-hidden"
+        x-data="{ active: 0 }" x-init="setInterval(() => active = active === 0 ? 1 : 0, 3000)">
+        <div class="relative h-[1.5em] flex items-center justify-center">
+            <div x-show="active === 0" x-transition:enter="transition opacity duration-500"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                x-transition:leave="transition opacity duration-500" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" class="absolute w-full">
+                Welcome To Our Store
+            </div>
+            <div x-show="active === 1" x-transition:enter="transition opacity duration-500"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                x-transition:leave="transition opacity duration-500" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" x-cloak class="absolute w-full">
+                Fast & Free Shipping On 1+ Items
+            </div>
+        </div>
+    </div>
     <header x-data="{ mobileMenuOpen: false }" class="sticky top-0 w-full z-[100] bg-white shadow-sm">
         <div class="header-bottom py-2 lg:py-6">
             <div class="container">
