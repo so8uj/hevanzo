@@ -120,6 +120,11 @@
 .border-2 {
   border: 1px solid var(--border-2);
 }
+
+.border-top{
+  border-top: 1px solid var(--border-1);
+}
+
 .content-center {
   display: flex;
   align-items: center;
@@ -570,6 +575,12 @@ body {
   .product-price {
     margin-top: 5px;
   }
+
+
+  .menu-product-slider .product-price , .menu-product-slider .product-title {
+    font-size: 14px;
+  }
+
   .single-product.full-image,
   .single-product.full-image-section {
     text-align: center;
@@ -680,8 +691,9 @@ body {
   scroll-snap-align: start;
 }
 .menu-slider-item img{
-  height: 200px;
-  object-fit: cover;
+      height: 170px;
+    object-fit: contain;
+    background: #efefef;
 }
 @media (min-width: 1024px) {
   .menu-slider-item {

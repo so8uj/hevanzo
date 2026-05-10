@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css?v=1.8">
+    <link rel="stylesheet" href="assets/style.css?v=1.9">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>HEVANZO | Single Product Page</title>
@@ -69,15 +69,15 @@
 
                     <div class="logo w-1/3 lg:w-1/4 text-center lg:text-left flex item-center">
                         <a href="index.html" class="inline-block">
-                            <img src="./assets/img/hevanzo.jpg" class="w-[100px] sm:w-[110px] lg:w-[150px]"
+                            <img src="./assets/img/hevanzo.jpg" class="w-[100px] sm:w-[110px] lg:w-[150px] "
                                 alt="HEVANZO">
                         </a>
                     </div>
 
-                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[48px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
+                    <nav class="nav w-full lg:w-2/4 absolute lg:static top-[33px] left-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none z-50 p-5 lg:p-0 rounded-lg lg:rounded-none"
                         :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
                         <ul
-                            class="flex flex-col lg:flex-row items-start lg:items-center gap-y-4 lg:gap-y-0 gap-x-[30px] main-nav justify-center">
+                            class="flex flex-col lg:flex-row items-start lg:items-center gap-y-2 lg:gap-y-0 gap-x-[30px] main-nav justify-center">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="./products.html">All Products</a></li>
                             <li><a href="#">New Arrivals</a></li>
@@ -88,7 +88,7 @@
                             scrollNext() { this.$refs.slider.scrollBy({ left: this.$refs.slider.offsetWidth / 2 + 8, behavior: 'smooth' }) },
                             scrollPrev() { this.$refs.slider.scrollBy({ left: -(this.$refs.slider.offsetWidth / 2 + 8), behavior: 'smooth' }) }
                         }" :class="mobileMenuOpen ? 'block' : 'hidden lg:block'" x-cloak>
-                            <h3 class="pt-[34px] pb-3">Our Best Selling Products</h3>
+                            <h3 class="pt-[28px] pb-3 text-sm font-semibold">Our Best Selling Products</h3>
 
                             <div class="relative mb-[30px]">
                                 <!-- Arrows -->
@@ -211,34 +211,79 @@
                                         </div>
                                     </div>
 
-                                    <div class="single-product menu-slider-item">
-                                        <a href="single-product.html" class="product-image block">
-                                            <img src="./assets/img/6.jpg" class="w-full" alt="Product Image">
-                                        </a>
-                                        <div class="single-product-details">
-                                            <h3 class="product-title"><a href="single-product.html">Hevanzo - Cap</a>
-                                            </h3>
-                                            <ul class="color-variant flex gap-x-2 py-2">
-                                                <li class="active content-center">
-                                                    <div class="color" style="background: #000;"></div>
-                                                </li>
-                                                <li class="content-center">
-                                                    <div class="color" style="background: #fff;"></div>
-                                                </li>
-                                            </ul>
-                                            <p class="product-price"> <del class="opacity-50 font-normal">€19.95</del>
-                                                €14.95</p>
-                                        </div>
-                                    </div>
-
-
-
 
                                 </div>
                             </div>
                             <div class="text-center pb-2">
                                 <a href="./products.html" class="btn-b btn btn-sm md:btn-md">Shop Collection <img
                                         src="./assets/img/icons/arrow-right-top.svg" alt="Arrow Right Icon"></a>
+                            </div>
+
+                            <div class="mobile-menu-bottom-part block lg:hidden border-top pt-7 mt-4">
+
+                                <div class="grid grid-cols-12 gap-6">
+                                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                                        <div class="icon-box text-center">
+                                            <div class="box-image content-center w-9 h-9 bg-a rounded-full mx-auto">
+                                                <img src="./assets/img/icons/shipping-global.svg" width="18px"
+                                                    alt="Icon">
+                                            </div>
+                                            <h5
+                                                class="py-2 xxl:py-4 leading-none mb-0 font-semibold text-[12px] lg:text-md xxl:text-xl">
+                                                Fast & Free Shipping
+                                            </h5>
+                                            <p class="italic mb-0 text-[10px] lg:text-sm xxl:text-lg">Fast & Free
+                                                Shipping
+                                                On 1+ Items</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                                        <div class="icon-box text-center">
+                                            <div class="box-image content-center w-9 h-9 bg-a rounded-full mx-auto">
+                                                <img src="./assets/img/icons/arrow-return.svg" width="18px" alt="Icon">
+                                            </div>
+                                            <h5
+                                                class="py-2 leading-none mb-0 font-semibold text-[12px] lg:text-md xxl:text-xl">
+                                                Hassle Free
+                                                Returns
+                                            </h5>
+                                            <p class="italic mb-0 text-[10px] lg:text-sm xxl:text-lg">14 Days Easy
+                                                Returns.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                                        <div class="icon-box text-center">
+                                            <div class="box-image content-center w-9 h-9 bg-a rounded-full mx-auto">
+                                                <img src="./assets/img/icons/lock.svg" width="18px" alt="Icon">
+                                            </div>
+                                            <h5
+                                                class="py-2 leading-none mb-0 font-semibold text-[12px] lg:text-md xxl:text-xl">
+                                                Secure
+                                                Checkout
+                                            </h5>
+                                            <p class="italic mb-0 text-[10px] lg:text-sm xxl:text-lg">All Payments Are
+                                                Processed Securely
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-6 sm:col-span-6 lg:col-span-3">
+                                        <div class="icon-box text-center">
+                                            <div class="box-image content-center w-9 h-9 bg-a rounded-full mx-auto">
+                                                <img src="./assets/img/icons/support.svg" width=" 18px" alt="Icon">
+                                            </div>
+                                            <h5
+                                                class="py-2 leading-none mb-0 font-semibold text-[12px] lg:text-md xxl:text-xl">
+                                                Customer
+                                                Service
+                                            </h5>
+                                            <p class="italic text-[10px] lg:text-sm xxl:text-lg">Our Support Is
+                                                Available
+                                                24/7</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                     </nav>
